@@ -42,10 +42,6 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "${viewModel.name}!!! Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
 
-            GlobalScope.launch(Dispatchers.IO) {
-                viewModel.getMovies()
-            }
-
         }
     }
 

@@ -1,9 +1,9 @@
 package com.example.themovie.di
 
-import com.example.themovie.network.service.MovieService.MovieService
-import com.example.themovie.repository.MainRepository
-import com.example.themovie.repository.MovieRepository
-import com.example.themovie.repository.MovieRepositoryImpl
+import com.example.themovie.service.MovieService
+import com.example.themovie.data.repository.MainRepository
+import com.example.themovie.domain.repository.MovieRepository
+import com.example.themovie.data.repository.MovieRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
