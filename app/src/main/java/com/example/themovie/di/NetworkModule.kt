@@ -1,6 +1,6 @@
 package com.example.themovie.di
 
-import com.example.themovie.network.service.MovieService.MovieService
+import com.example.themovie.service.MovieService
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides

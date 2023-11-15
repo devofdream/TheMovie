@@ -1,4 +1,4 @@
-package com.example.themovie.repository
+package com.example.themovie.data.repository
 
 
 class MainRepository() {

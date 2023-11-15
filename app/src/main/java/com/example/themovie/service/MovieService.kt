@@ -1,4 +1,4 @@
-package com.example.themovie.network.service.MovieService
+package com.example.themovie.service
 
 import com.example.themovie.network.response.TopRatedResponse
 import retrofit2.http.GET

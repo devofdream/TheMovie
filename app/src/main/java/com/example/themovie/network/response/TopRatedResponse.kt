@@ -1,4 +1,5 @@
 package com.example.themovie.network.response
+import com.example.themovie.network.model.MovieDto
 import com.google.gson.annotations.SerializedName
 
 data class TopRatedResponse(
