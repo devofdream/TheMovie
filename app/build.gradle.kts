@@ -69,6 +69,13 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
 
+    implementation(libs.gson)
+    // Retrofit
+    implementation (libs.retrofit)
+    // Retrofit with Moshi Converter
+    implementation (libs.converter.scalars)
+    implementation (libs.converter.gson)
+
 }
 
 // Allow references to generated code

@@ -13,6 +13,10 @@ import androidx.activity.viewModels
 import com.example.themovie.databinding.ActivityMainBinding
 import com.example.themovie.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -37,6 +41,11 @@ class MainActivity : AppCompatActivity() {
         binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "${viewModel.name}!!! Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
+
+            GlobalScope.launch(Dispatchers.IO) {
+                viewModel.getMovies()
+            }
+
         }
     }
 

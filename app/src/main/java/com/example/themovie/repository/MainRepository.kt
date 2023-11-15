@@ -1,4 +1,4 @@
-package com.example.themovie.viewmodels
+package com.example.themovie.repository
 
 
 class MainRepository() {
