@@ -77,6 +77,8 @@ dependencies {
     implementation (libs.converter.scalars)
     implementation (libs.converter.gson)
 
+    implementation (libs.kotlinx.coroutines.android)
+
 }
 
 // Allow references to generated code

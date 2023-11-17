@@ -1,6 +1,6 @@
-package com.example.themovie.di
+package com.example.themovie.data.di
 
-import com.example.themovie.service.MovieService
+import com.example.themovie.network.MovieApi
 import com.example.themovie.data.repository.MainRepository
 import com.example.themovie.domain.repository.MovieRepository
 import com.example.themovie.data.repository.MovieRepositoryImpl
@@ -22,8 +22,8 @@ object RepositoryModule {
 
     @Singleton
     @Provides
-    fun provideMovieRepository(movieService: MovieService) : MovieRepository {
-        return MovieRepositoryImpl(movieService = movieService)
+    fun provideMovieRepository(movieApi: MovieApi) : MovieRepository {
+        return MovieRepositoryImpl(movieApi = movieApi)
     }
 
 }
