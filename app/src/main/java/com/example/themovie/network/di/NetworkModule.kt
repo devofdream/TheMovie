@@ -1,6 +1,6 @@
-package com.example.themovie.di
+package com.example.themovie.network.di
 
-import com.example.themovie.service.MovieService
+import com.example.themovie.network.MovieApi
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
@@ -16,12 +16,12 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideMovieService(): MovieService {
+    fun provideMovieService(): MovieApi {
         return Retrofit.Builder()
             .baseUrl("https://api.themoviedb.org/3/")
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
             .build()
-            .create(MovieService::class.java)
+            .create(MovieApi::class.java)
     }
 
 }

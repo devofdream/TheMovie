@@ -7,6 +7,7 @@ espresso-core = "3.5.1"
 gson = "2.9.0"
 hilt-android = "2.47"
 junit = "4.13.2"
+kotlinx-coroutines-android = "1.7.3"
 material = "1.10.0"
 navigation-fragment-ktx = "2.7.5"
 retrofit = "2.9.0"
@@ -25,6 +26,7 @@ gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt-android" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt-android" }
 junit = { module = "junit:junit", version.ref = "junit" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines-android" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 
