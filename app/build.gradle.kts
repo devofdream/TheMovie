@@ -76,6 +76,8 @@ dependencies {
     // Retrofit with Moshi Converter
     implementation (libs.converter.scalars)
     implementation (libs.converter.gson)
+    
+    implementation (libs.kotlinx.coroutines.android)
 
 }
 

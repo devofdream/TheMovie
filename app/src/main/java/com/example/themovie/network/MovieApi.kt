@@ -1,10 +1,10 @@
-package com.example.themovie.service
+package com.example.themovie.network
 
 import com.example.themovie.network.response.TopRatedResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface MovieService {
+interface MovieApi {
 
     //https://api.themoviedb.org/3/movie/top_rated
     @GET("movie/top_rated")
