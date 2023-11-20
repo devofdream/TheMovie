@@ -76,8 +76,13 @@ dependencies {
     // Retrofit with Moshi Converter
     implementation (libs.converter.scalars)
     implementation (libs.converter.gson)
-    
+
     implementation (libs.kotlinx.coroutines.android)
+
+    implementation(libs.androidx.paging.runtime.ktx)
+
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
 
 }
 
