@@ -11,9 +11,12 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.themovie.databinding.FragmentFirstBinding
+import com.example.themovie.presentation.adapter.MovieAdapter
 import com.example.themovie.viewmodels.MovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.onEach
@@ -48,24 +51,19 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }
+        val adapter = MovieAdapter()
+        val items = viewModel.movieList
+
+        val recyclerView = binding.list
+
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(recyclerView.context)
 
         lifecycleScope.launch {
-            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                val moviesOverViews = StringBuilder()
-                viewModel.movieList
-                    .drop(1)
-                    .onEach {
-                        it.onEach { movie ->
-                            moviesOverViews.appendLine(movie.title)
-                            moviesOverViews.appendLine(movie.overview)
-                            moviesOverViews.appendLine()
-                        }
-                        binding.textviewFirst.text = moviesOverViews.toString()
-                    }
-                    .first()
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                items.collectLatest {
+                    adapter.submitData(it)
+                }
             }
         }
 
