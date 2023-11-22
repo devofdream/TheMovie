@@ -15,6 +15,6 @@ class MovieViewModel @Inject constructor(getTopRatedPagerUseCase: GetTopRatedPag
 
     companion object {
         private const val Language: String = "ko"
-        private const val Page: Int = 5
+        private const val Page: Int = 100
     }
 }
