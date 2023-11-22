@@ -22,11 +22,13 @@
 
             <ImageView
                 android:id="@+id/postImg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                app:layout_constraintStart_toStartOf="@id/postLayout"
-                app:layout_constraintTop_toTopOf="@id/postLayout"
+                android:layout_width="130dp"
+                android:layout_height="180dp"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/title"
+                app:layout_constraintEnd_toEndOf="parent"
                 tools:src="@drawable/poster_sample" />
 
             <TextView
