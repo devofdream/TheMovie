@@ -5,9 +5,9 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.themovie.databinding.ListitemMovieBinding
+import com.example.themovie.databinding.ItemMovieBinding
 import com.example.themovie.domain.model.Movie
+import com.example.themovie.domain.model.posterDate
 import com.example.themovie.presentation.util.loadImage
 
 class MovieAdapter : PagingDataAdapter<Movie, MovieAdapter.ViewHolder>(diffCallback) {
@@ -20,7 +20,7 @@ class MovieAdapter : PagingDataAdapter<Movie, MovieAdapter.ViewHolder>(diffCallb
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieAdapter.ViewHolder {
         return ViewHolder(
-            ListitemMovieBinding.inflate(
+            ItemMovieBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -40,13 +40,13 @@ class MovieAdapter : PagingDataAdapter<Movie, MovieAdapter.ViewHolder>(diffCallb
         }
     }
 
-    inner class ViewHolder(private val binding: ListitemMovieBinding) :
+    inner class ViewHolder(private val binding: ItemMovieBinding) :
         RecyclerView.ViewHolder(binding.root) {
             fun bind(movie: Movie) {
                 binding.title.text = movie.title
-                binding.contents.text = movie.overview
-                //binding.img
-                movie.poster_path?.let { binding.img.loadImage(it) }
+                binding.date.text = movie.release_date
+                binding.date.text = movie.posterDate
+                movie.poster_path?.let { binding.postImg.loadImage(it) }
 
             }
         }
