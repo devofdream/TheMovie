@@ -10,16 +10,13 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.themovie.databinding.FragmentFirstBinding
+import com.example.themovie.databinding.FragmentTopRatedBinding
 import com.example.themovie.presentation.adapter.MovieAdapter
 import com.example.themovie.viewmodels.MovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.drop
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
 /**
@@ -27,9 +24,9 @@ import kotlinx.coroutines.launch
  */
 
 @AndroidEntryPoint
-class FirstFragment : Fragment() {
+class TopRatedFragment : Fragment() {
 
-    private var _binding: FragmentFirstBinding? = null
+    private var _binding: FragmentTopRatedBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -42,7 +39,7 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        _binding = FragmentTopRatedBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -57,7 +54,7 @@ class FirstFragment : Fragment() {
         val recyclerView = binding.list
 
         recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(recyclerView.context)
+        recyclerView.layoutManager = GridLayoutManager(recyclerView.context, 2)
 
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {

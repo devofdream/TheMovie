@@ -1,7 +1,12 @@
 package com.example.themovie.domain.model
 
+import android.os.Build
 import android.os.Parcelable
+import androidx.annotation.RequiresApi
 import kotlinx.parcelize.Parcelize
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 @Parcelize
 data class Movie(
@@ -20,3 +25,8 @@ data class Movie(
     val video: Boolean,
     val vote_average: Float,
 ) : Parcelable
+
+val formatter = SimpleDateFormat("yyyy-mm-dd")
+val formatter2 = SimpleDateFormat("m월 dd, yyyy")
+val Movie.posterDate: String
+    get() = formatter2.format(formatter.parse(release_date))

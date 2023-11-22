@@ -19,8 +19,8 @@ android {
 
     defaultConfig {
         applicationId = "com.example.themovie"
-        minSdk = 24
-        targetSdk = 33
+        minSdk = 31
+        targetSdk = 26
         versionCode = 1
         versionName = "1.0"
 
