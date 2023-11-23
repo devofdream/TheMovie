@@ -44,7 +44,6 @@ class MovieAdapter : PagingDataAdapter<Movie, MovieAdapter.ViewHolder>(diffCallb
         RecyclerView.ViewHolder(binding.root) {
             fun bind(movie: Movie) {
                 binding.title.text = movie.title
-                binding.date.text = movie.release_date
                 binding.date.text = movie.posterDate
                 movie.poster_path?.let { binding.postImg.loadImage(it) }
 

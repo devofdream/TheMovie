@@ -54,7 +54,6 @@ class TopRatedFragment : Fragment() {
         val recyclerView = binding.list
 
         recyclerView.adapter = adapter
-        recyclerView.layoutManager = GridLayoutManager(recyclerView.context, 2)
 
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
