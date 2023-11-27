@@ -1,8 +1,8 @@
 package com.example.themovie.data.di
 
 import com.example.themovie.data.repository.MainRepository
-import com.example.themovie.domain.repository.MovieRepository
 import com.example.themovie.data.repository.MovieRepositoryImpl
+import com.example.themovie.domain.repository.MovieRepository
 import com.example.themovie.network.MovieApi
 import dagger.Module
 import dagger.Provides

@@ -11,6 +11,9 @@ import com.example.themovie.domain.model.posterDate
 import com.example.themovie.presentation.util.loadImage
 
 class MovieAdapter : PagingDataAdapter<Movie, MovieAdapter.ViewHolder>(diffCallback) {
+
+    lateinit var onItemClick: (Movie) -> Unit
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val tile = getItem(position)
         if (tile != null) {
@@ -46,6 +49,10 @@ class MovieAdapter : PagingDataAdapter<Movie, MovieAdapter.ViewHolder>(diffCallb
                 binding.title.text = movie.title
                 binding.date.text = movie.posterDate
                 movie.poster_path?.let { binding.postImg.loadImage(it) }
+
+                binding.root.setOnClickListener {
+                    onItemClick(movie)
+                }
 
             }
         }

@@ -21,35 +21,28 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/postImg"
-                android:layout_width="130dp"
-                android:layout_height="180dp"
+                android:id="@+id/poster_recommendation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toTopOf="@id/title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:src="@drawable/poster_sample" />
+                tools:src="@drawable/poster_recommendations" />
 
             <TextView
                 android:id="@+id/title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                app:layout_constraintEnd_toEndOf="@id/postImg"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/poster_recommendation"
                 app:layout_constraintStart_toStartOf="@id/postLayout"
-                app:layout_constraintTop_toBottomOf="@id/postImg"
-                tools:text="The Godfather 대부" />
+                app:layout_constraintTop_toBottomOf="@id/poster_recommendation"
+                tools:text="나의 회춘기" />
 
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:text="7월 21, 2023"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

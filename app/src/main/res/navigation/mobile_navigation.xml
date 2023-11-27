@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_top_rated">
+
+    <fragment
+        android:id="@+id/nav_movie_details"
+        android:name="com.example.themovie.MovieDetailsFragment"
+        android:label="영화 소개"
+        tools:layout="@layout/fragment_movie_details" >
+        <argument
+            android:name="movie"
+            app:argType="com.example.themovie.domain.model.Movie" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_top_rated"
+        android:name="com.example.themovie.TopRatedFragment"
+        android:label="Top Rated Movie"
+        tools:layout="@layout/fragment_top_rated">
+        <action
+            android:id="@+id/action_TopRatedFragment_to_MovieDetailsFragment"
+            app:destination="@+id/nav_movie_details" />
+    </fragment>
+</navigation>
