@@ -21,35 +21,39 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/postImg"
+                android:id="@+id/profileImg"
                 android:layout_width="130dp"
                 android:layout_height="180dp"
                 android:scaleType="fitXY"
-                app:layout_constraintBottom_toTopOf="@id/title"
+                app:layout_constraintBottom_toTopOf="@id/name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:src="@drawable/poster_sample" />
+                tools:src="@drawable/cast_marlon_brando" />
 
             <TextView
-                android:id="@+id/title"
+                android:id="@+id/name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                app:layout_constraintEnd_toEndOf="@id/postImg"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/profileImg"
                 app:layout_constraintStart_toStartOf="@id/postLayout"
-                app:layout_constraintTop_toBottomOf="@id/postImg"
-                tools:text="The Godfather 대부" />
+                app:layout_constraintTop_toBottomOf="@id/profileImg"
+                tools:text="Marlon Brando" />
 
             <TextView
-                android:id="@+id/date"
+                android:id="@+id/character"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:text="7월 21, 2023"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title" />
+                android:gravity="center"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="@id/profileImg"
+                app:layout_constraintStart_toStartOf="@id/postLayout"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                tools:text="Don Vito Corleone" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

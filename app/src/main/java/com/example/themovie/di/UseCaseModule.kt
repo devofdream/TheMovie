@@ -1,6 +1,8 @@
 package com.example.themovie.di
 
 import com.example.themovie.domain.repository.MovieRepository
+import com.example.themovie.domain.usecase.GetCreditsUseCase
+import com.example.themovie.domain.usecase.GetRecommendationsUseCase
 import com.example.themovie.domain.usecase.GetTopRatedPagerUseCase
 import dagger.Module
 import dagger.Provides
@@ -16,6 +18,24 @@ object UseCaseModule {
         movieRepository: MovieRepository,
     ): GetTopRatedPagerUseCase {
         return GetTopRatedPagerUseCase(
+            movieRepository
+        )
+    }
+
+    @Provides
+    fun provideGetCreditsUseCase(
+        movieRepository: MovieRepository,
+    ): GetCreditsUseCase {
+        return GetCreditsUseCase(
+            movieRepository
+        )
+    }
+
+    @Provides
+    fun provideGetRecommendationsUseCase(
+        movieRepository: MovieRepository,
+    ): GetRecommendationsUseCase {
+        return GetRecommendationsUseCase(
             movieRepository
         )
     }
