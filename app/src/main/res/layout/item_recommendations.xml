@@ -22,8 +22,8 @@
 
             <ImageView
                 android:id="@+id/poster_recommendation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="113dp"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toTopOf="@id/title"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -38,6 +38,8 @@
                 android:gravity="center"
                 android:textSize="15sp"
                 android:textStyle="bold"
+                android:lines="2"
+                android:ellipsize="end"
                 app:layout_constraintEnd_toEndOf="@id/poster_recommendation"
                 app:layout_constraintStart_toStartOf="@id/postLayout"
                 app:layout_constraintTop_toBottomOf="@id/poster_recommendation"

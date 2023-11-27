@@ -43,7 +43,11 @@ class MovieDetailsFragment : Fragment() {
         if (movie != null) {
             // details
             binding.summary.name.text = movie.title
-            movie.poster_path?.let { binding.summary.poster.loadImage(it) }
+            binding.summary.releaseDate.text = movie.release_date
+            binding.summary.overview.text = movie.overview
+            binding.summary.originalTitle.text = movie.original_title
+            movie.backdrop_path?.let { binding.summary.poster.loadImage(it) }
+
 
             // casts
             val casts = viewModel.castsList

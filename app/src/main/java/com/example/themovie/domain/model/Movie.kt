@@ -22,7 +22,7 @@ data class Movie(
     val vote_average: Float,
 ) : Parcelable
 
-val formatter = SimpleDateFormat("yyyy-mm-dd")
-val formatter2 = SimpleDateFormat("m월 dd, yyyy")
+val hyphenFormatter = SimpleDateFormat("yyyy-mm-dd")
+val movieFormatter = SimpleDateFormat("m월 dd, yyyy")
 val Movie.posterDate: String
-    get() = formatter2.format(formatter.parse(release_date))
+    get() = movieFormatter.format(hyphenFormatter.parse(release_date))
