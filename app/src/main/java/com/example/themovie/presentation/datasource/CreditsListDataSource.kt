@@ -26,8 +26,6 @@ class CreditsListDataSource(
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Cast> {
         return try {
-            val nextPageNumber = params.key ?: 0
-            val requestPage = nextPageNumber + 1
 
             val creditsResponse: CreditsResponse = movieRepository.getCredits(
                 language = language,
@@ -38,8 +36,8 @@ class CreditsListDataSource(
 
             LoadResult.Page(
                 data = list,
-                prevKey = if (nextPageNumber > 0) nextPageNumber - 1 else null,
-                nextKey = if (nextPageNumber < creditsResponse.cast.size) nextPageNumber + 1 else null
+                prevKey = null,
+                nextKey = null
             )
         } catch (e: Exception) {
             Log.e(ContentValues.TAG, "launchJob: Exception: $e, ${e.cause}")

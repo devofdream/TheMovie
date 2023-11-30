@@ -43,7 +43,7 @@ class TopRatedFragment : Fragment() {
 
         _binding = FragmentTopRatedBinding.inflate(inflater, container, false)
 
-        val adapter = MovieAdapter()
+        val adapter = MovieAdapter(requireContext())
         val items = viewModel.movieList
 
         val recyclerView = binding.list

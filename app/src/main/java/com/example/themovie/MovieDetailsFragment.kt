@@ -51,7 +51,7 @@ class MovieDetailsFragment : Fragment() {
 
             // casts
             val casts = viewModel.castsList
-            val castAdapter = CastAdapter()
+            val castAdapter = CastAdapter(requireContext())
             val rvCast = binding.cast.listCasts
             rvCast.adapter = castAdapter
 
@@ -63,7 +63,7 @@ class MovieDetailsFragment : Fragment() {
 
             //recommendations
             val recommendations = viewModel.recommendationsList
-            val recommendationAdapter = RecommendationsAdapter()
+            val recommendationAdapter = RecommendationsAdapter(requireContext())
             val rvRecommendations = binding.recommendations.listRecommendations
             rvRecommendations.adapter = recommendationAdapter
 
