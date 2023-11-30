@@ -26,8 +26,6 @@ class RecommendationsListDataSource(
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Result> {
         return try {
-            val nextPageNumber = params.key ?: 0
-            val requestPage = nextPageNumber + 1
 
             val recommendationsResponse: RecommendationsResponse = movieRepository.getRecommendations(
                 language = language,
@@ -38,8 +36,8 @@ class RecommendationsListDataSource(
 
             LoadResult.Page(
                 data = list,
-                prevKey = if (nextPageNumber > 0) nextPageNumber - 1 else null,
-                nextKey = if (nextPageNumber < recommendationsResponse.results.size) nextPageNumber + 1 else null
+                prevKey = null,
+                nextKey = null
             )
         } catch (e: Exception) {
             Log.e(ContentValues.TAG, "launchJob: Exception: $e, ${e.cause}")

@@ -1,15 +1,20 @@
 package com.example.themovie.presentation.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.themovie.R
 import com.example.themovie.databinding.ItemRecommendationsBinding
 import com.example.themovie.domain.model.Result
 import com.example.themovie.presentation.util.loadImage
 
-class RecommendationsAdapter : PagingDataAdapter<Result, RecommendationsAdapter.ViewHolder>(diffCallback) {
+class RecommendationsAdapter(context: Context) : PagingDataAdapter<Result, RecommendationsAdapter.ViewHolder>(diffCallback) {
+
+    val defaultDrawable = ContextCompat.getDrawable(context, R.drawable.baseline_question_mark)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val tile = getItem(position)
@@ -44,7 +49,7 @@ class RecommendationsAdapter : PagingDataAdapter<Result, RecommendationsAdapter.
         RecyclerView.ViewHolder(binding.root) {
             fun bind(result: Result) {
                 binding.title.text = result.title
-                result.backdropPath?.let { binding.posterRecommendation.loadImage(it)}
+                result.backdropPath?.let { binding.posterRecommendation.loadImage(it)} ?: binding.posterRecommendation.setImageDrawable(defaultDrawable)
 
             }
         }
