@@ -1,6 +1,7 @@
 [versions]
 androidx-junit = "1.1.5"
 appcompat = "1.6.1"
+coil-compose = "2.5.0"
 constraintlayout = "2.1.4"
 core-ktx = "1.9.0"
 espresso-core = "3.5.1"
@@ -11,6 +12,7 @@ junit = "4.13.2"
 kotlinx-coroutines-android = "1.7.3"
 material = "1.10.0"
 navigation-fragment-ktx = "2.7.5"
+paging-compose = "1.0.0-alpha10"
 paging-runtime-ktx = "3.2.1"
 retrofit = "2.9.0"
 org-jetbrains-kotlin-android = "1.9.0"
@@ -24,7 +26,9 @@ androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-j
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation-fragment-ktx" }
 androidx-navigation-safe-args-gradle-plugin = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "navigation-fragment-ktx" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation-fragment-ktx" }
+androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "paging-compose" }
 androidx-paging-runtime-ktx = { module = "androidx.paging:paging-runtime-ktx", version.ref = "paging-runtime-ktx" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil-compose" }
 compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "retrofit" }
