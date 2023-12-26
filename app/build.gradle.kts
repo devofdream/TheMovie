@@ -16,6 +16,11 @@ android {
 
     buildFeatures {
         buildConfig = true
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.0"
     }
 
     defaultConfig {
@@ -84,6 +89,21 @@ dependencies {
 
     implementation(libs.glide)
     annotationProcessor(libs.compiler)
+
+    val composeBom = platform("androidx.compose:compose-bom:2022.10.00")
+    implementation(composeBom)
+    androidTestImplementation(composeBom)
+
+    implementation ("androidx.compose.runtime:runtime")
+    implementation ("androidx.compose.ui:ui")
+    implementation ("androidx.compose.foundation:foundation")
+    implementation ("androidx.compose.foundation:foundation-layout")
+    implementation ("androidx.compose.material:material")
+    implementation ("androidx.compose.runtime:runtime-livedata")
+    implementation ("androidx.compose.ui:ui-tooling")
+    implementation (libs.androidx.paging.compose)
+
+    implementation(libs.coil.compose)
 
 }
 
